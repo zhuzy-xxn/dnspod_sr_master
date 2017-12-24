@@ -585,7 +585,7 @@ print_hex(uchar * val, int n)
 void
 dns_error(int level, char *msg)
 {
-    dbg("Error:%s\n", msg);
+    __DEBUG__("Error:%s\n", msg);
     fflush(stdout);
     if (level == 0)
         exit(-1);
@@ -599,7 +599,7 @@ dbg(const char *format, ...)
     int ret;
     va_list ap;
     va_start(ap, format);
-    printf("dbg:");
+    //printf("dbg:");
     ret = vprintf(format, ap);
     va_end(ap);
     return ret;

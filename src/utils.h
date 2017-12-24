@@ -54,6 +54,12 @@ typedef uint32_t hashval_t;
 
 extern time_t global_now;       //defined in init.c
 
+#ifndef __DEBUG__
+#define __DEBUG__(fmt, args...) do{ \
+		dbg("[%s:%d func:%s] "fmt"\n", __FILE__, __LINE__, __func__, ##args); \
+	}while(0)
+#endif
+
 
 enum utils_numberic {
     DEBUG_TIMES = 500,

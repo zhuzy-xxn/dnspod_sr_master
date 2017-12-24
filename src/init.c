@@ -301,13 +301,13 @@ sanity_test(int exi)
 int
 print_basic_debug(void)
 {
-    printf("[DBG:] dnspod-sr is successfully running now!!\n");
-    printf("[DBG:] max_ele_size is %u - 1808\n", MAX_ELE_NUM);
-    printf("[DBG:] server may contain %u useful records\n",
+    __DEBUG__("[DBG:] dnspod-sr is successfully running now!!");
+    __DEBUG__("[DBG:] max_ele_size is %u - 1808", MAX_ELE_NUM);
+    __DEBUG__("[DBG:] server may contain %u useful records",
             (MAX_ELE_NUM - 1808) / 3);
-    printf("[DBG:] hash_table_size is %u\n", HASH_TABLE_SIZE);
-    printf("[DBG:] we have %u hash tables\n", MULTI_HASH);
-    printf("[DBG:] we have %u fetchers,%u quizzers\n", FETCHER_NUM,
+    __DEBUG__("[DBG:] hash_table_size is %u", HASH_TABLE_SIZE);
+    __DEBUG__("[DBG:] we have %u hash tables", MULTI_HASH);
+    __DEBUG__("[DBG:] we have %u fetchers,%u quizzers", FETCHER_NUM,
             QUIZZER_NUM);
     return 0;
 }
